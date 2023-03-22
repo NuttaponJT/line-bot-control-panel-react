@@ -4,9 +4,10 @@ import { useState } from 'react';
 import './MyNavBar.css';
 import { Navbar, Nav, NavLink } from 'react-bootstrap';
 import NavbarCollapse from 'react-bootstrap/esm/NavbarCollapse';
+import PropTypes from 'prop-types';
 
-const MyNavBar = () => {
-    const [activeTab, setactiveTab] = useState("Home");
+const MyNavBar = (props) => {
+    // const [activeTab, setactiveTab] = useState("Home");
 
     const mainMenus = ["Home", "Push Events", "Custom Auto Reply"];
 
@@ -16,10 +17,10 @@ const MyNavBar = () => {
             <NavbarCollapse id="responsive-navbar-nav">
                 <Nav>
                     {mainMenus.map((menuName) => {
-                        const isActive = `${menuName === activeTab ? 'active' : ''}`;
+                        const isActive = `${menuName === props.activeTabProp.activeTab ? 'active' : ''}`;
 
                         const handleClickNavLink = (event) => {
-                            setactiveTab(menuName);
+                            props.activeTabProp.setactiveTab(menuName);
                         };
 
                         return (
@@ -30,6 +31,10 @@ const MyNavBar = () => {
             </NavbarCollapse>
         </Navbar>
     );
+}
+
+MyNavBar.propTypes = {
+    activeTabProp: PropTypes.object.isRequired, 
 }
 
 export default MyNavBar;
