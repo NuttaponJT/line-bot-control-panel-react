@@ -8,9 +8,41 @@
 }
 
 .left-sub-menu {
-    height: 30px;
+    height: 40px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    animation: fade-in-from-top 0.75s;
 }
 
 .left-sub-menu:hover {
     background-color: rgb(230, 230, 230);
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
+@keyframes fade-in-from-top {
+    from {
+        top: 5px;
+        opacity: 0.5;
+    }
+    to {
+        top: 0px;
+        opacity: 1;
+    }
 }
