@@ -16,13 +16,9 @@
     display: inline-block;
 }
 
-.head-subject {
-    padding: 20px;
-}
-
 .left-sub-menu {
-    height: 40px;
-    padding: 10px;
+    height: 60px;
+    padding: 20px;
     display: flex;
     align-items: center;
     cursor: pointer;

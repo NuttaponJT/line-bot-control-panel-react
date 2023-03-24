@@ -33,8 +33,11 @@ const LeftMenuBar = (props) => {
         <>
             <div class="left-menu-bar">
                 {mappingMenus[props.activeTabProp.activeTab].map((subMenu) => {
+
+                    const calLegacyUrl = props.legacyUrl === "/" ? "" : props.legacyUrl;
+
                     return (
-                        <Link to={`${props.legacyUrl}${subMenu.link}`} className="no-link-looking"><li class="left-sub-menu">{subMenu.subject}</li></Link>
+                        <Link to={`${calLegacyUrl}${subMenu.link}`} className="no-link-looking"><li class="left-sub-menu">{subMenu.subject}</li></Link>
                     )
                 })}
             </div>
