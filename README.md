@@ -1,1 +1,1 @@
-Using nest.js to building webservice to handle line webhook.
+This project going to be frontend control panel of line bot.
